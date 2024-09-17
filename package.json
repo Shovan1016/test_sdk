@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
-    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap"
+    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
+    "prepare": "run-s build"
   },
   "keywords": [],
   "author": "durgadas",
