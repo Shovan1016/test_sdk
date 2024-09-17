@@ -1,5 +1,5 @@
 {
-  "name": "sdk_1",
+  "name": "sdk.sg",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "default": "./dist/index.modern.js"
   },
   "scripts": {
-    "build": " microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "build": " microbundle --tsconfig tsconfig.json --no-compress --format modern,cjs",
     "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
     "prepare": "run-s build"
   },
