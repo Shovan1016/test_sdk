@@ -11,16 +11,9 @@
     "default": "./dist/index.modern.js"
   },
   "scripts": {
-    "build": "microbundle-crl --css-modules false --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --css-modules false --no-compress --format modern,umd,cjs",
-    "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
+    "prepare": "run-s build"
   },
   "keywords": [],
   "author": "Shovan",
@@ -31,7 +24,8 @@
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "isomorphic-unfetch": "^3.1.0",
-    "microbundle-crl": "^0.13.11"
+    "microbundle-crl": "^0.13.11",
+    "npm-run-all": "^4.1.5"
   },
   "files": [
     "dist"
