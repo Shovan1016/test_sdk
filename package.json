@@ -13,10 +13,10 @@
   "scripts": {
     "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
     "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
-    "prepare": "run-s build"
+    "prepare": "npm run build"
   },
   "keywords": [],
-  "author": "durgadas",
+  "author": "Shovan",
   "license": "MIT",
   "devDependencies": {
     "microbundle": "0.15.0"
